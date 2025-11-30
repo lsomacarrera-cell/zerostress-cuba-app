@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>ZeroStress · Viaje Cuba 2026</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#8b2d2d" />
+
+  <!-- Enlace al manifest para que sea instalable -->
+  <link rel="manifest" href="manifest.webmanifest" />
+
+  <style>
+    :root {
+      --color-fondo: #f5efe6;
+      --color-primario: #8b2d2d;   /* rojo vino colonial */
+      --color-secundario: #0f3b57; /* azul oscuro Habana */
+      --color-card: #fffaf3;
+      --color-borde: #d3bfa5;
+      --color-texto: #2b2520;
+      --radius-card: 18px;
+      --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.10);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #f7ebdd 0, #f5efe6 40%, #f1e4d5 100%);
+      color: var(--color-texto);
+      display: flex;
+      justify-content: center;
+      padding: 12px;
+    }
+
+    .app-container {
+      width: 100%;
+      max-width: 480px;
+      background: rgba(245, 239, 230, 0.95);
+      border-radius: 24px;
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.18);
+      padding: 16px 16px 20px;
+      border: 1px solid rgba(139, 45, 45, 0.12);
+      backdrop-filter: blur(6px);
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .logo-circle {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 20%, #ffd9a0, #f4a15c 50%, #8b2d2d 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fffaf3;
+      font-weight: 700;
+      font-size: 18px;
+      border: 2px solid rgba(255, 255, 255, 0.7);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    }
+
+    .header-text h1 {
+      margin: 0;
+      font-size: 20px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--color-primario);
+    }
+
+    .header-text p {
+      margin: 2px 0 0;
+      font-size: 13px;
+      color: #5c4a3b;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(15, 59, 87, 0.08);
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: 11px;
+      color: var(--color-secundario);
+      margin-top: 6px;
+    }
+
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #18a34a;
+      box-shadow: 0 0 0 4px rgba(24, 163, 74, 0.18);
+    }
+
+    .tabs {
+      display: flex;
+      background: #f0e2d2;
+      border-radius: 999px;
+      padding: 4px;
+      margin-bottom: 12px;
+    }
+
+    .tab {
+      flex: 1;
+      text-align: center;
+      font-size: 13px;
+      padding: 8px 0;
+      border-radius: 999px;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      color: #7a5b43;
+      font-weight: 500;
+      transition: background 0.2s, color 0.2s, transform 0.1s;
+    }
+
+    .tab.active {
+      background: #fffaf3;
+      color: var(--color-primario);
+      box-shadow: 0 2px 6px rgba(139, 45, 45, 0.25);
+      transform: translateY(-1px);
+    }
+
+    .section {
+      display: none;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    .day-strip {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      margin-bottom: 10px;
+    }
+
+    .day-chip {
+      min-width: 70px;
+      padding: 6px 8px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(211, 191, 165, 0.9);
+      font-size: 11px;
+      text-align: center;
+      cursor: pointer;
+      white-space: nowrap;
+      color: #5b4735;
+      flex-shrink: 0;
+      transition: background 0.15s, transform 0.1s, box-shadow 0.15s, border 0.15s;
+    }
+
+    .day-chip span {
+      display: block;
+      font-size: 10px;
+      opacity: 0.8;
+    }
+
+    .day-chip.active {
+      background: #8b2d2d;
+      color: #fffaf3;
+      border-color: #8b2d2d;
+      box-shadow: 0 4px 10px rgba(139, 45, 45, 0.35);
+      transform: translateY(-1px);
+    }
+
+    .card {
+      background: var(--color-card);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-card);
+      padding: 14px 14px 12px;
+      border: 1px solid var(--color-borde);
+      position: relative;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: var(--radius-card);
+      border-top: 3px solid rgba(139, 45, 45, 0.8);
+      pointer-events: none;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: baseline;
+      margin-bottom: 6px;
+    }
+
+    .card-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--color-secundario);
+    }
+
+    .card-date {
+      font-size: 12px;
+      color: #7a6655;
+    }
+
+    .card-plan {
+      font-size: 13px;
+      line-height: 1.4;
+      margin-bottom: 8px;
+    }
+
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 6px;
+      font-size: 12px;
+      color: #4f4033;
+      margin-top: 6px;
+      padding-top: 6px;
+      border-top: 1px dashed #d2b896;
+    }
+
+    .meta-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #f2e2cf;
+      border-radius: 999px;
+      padding: 3px 8px;
+    }
+
+    .meta-label {
+      font-size: 11px;
+      opacity: 0.85;
+    }
+
+    .meta-value {
+      font-weight: 600;
+    }
+
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin: 10px 2px 6px;
+    }
+
+    .section-title h2 {
+      font-size: 14px;
+      margin: 0;
+      color: var(--color-secundario);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .section-title span {
+      font-size: 11px;
+      color: #7a6655;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 160px;
+      border-radius: 14px;
+      border: 1px solid var(--color-borde);
+      padding: 10px;
+      font-family: inherit;
+      font-size: 13px;
+      resize: vertical;
+      background: #fffaf3;
+      color: var(--color-texto);
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.07) inset;
+    }
+
+    textarea:focus {
+      outline: 2px solid rgba(139, 45, 45, 0.6);
+      outline-offset: 1px;
+    }
+
+    .notes-hint {
+      font-size: 11px;
+      color: #7a6655;
+      margin-top: 4px;
+    }
+
+    footer {
+      margin-top: 10px;
+      font-size: 10px;
+      text-align: center;
+      color: #8b7562;
+    }
+
+    footer strong {
+      color: var(--color-primario);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: radial-gradient(circle at top, #2b2220 0, #181214 45%, #100d10 100%);
+      }
+      .app-container {
+        background: rgba(18, 12, 12, 0.93);
+        border-color: rgba(255, 255, 255, 0.04);
+      }
+      .header-text p,
+      .badge,
+      .notes-hint,
+      footer {
+        color: #d5c7ba;
+      }
+      .tabs {
+        background: #251819;
+      }
+      .day-chip {
+        background: rgba(29, 20, 20, 0.9);
+        border-color: #3c2b25;
+        color: #d7c6b7;
+      }
+      .card {
+        background: #211618;
+        border-color: #3c2925;
+      }
+      .card::before {
+        border-top-color: rgba(255, 215, 186, 0.7);
+      }
+      textarea {
+        background: #130d10;
+        color: #f5efe6;
+        border-color: #3c2925;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <div class="logo-circle">ZS</div>
+      <div class="header-text">
+        <h1>ZeroStress · Cuba 2026</h1>
+        <p>Viaje familiar · 1–12 enero · La Habana · Viñales · Varadero</p>
+        <div class="badge">
+          <div class="badge-dot"></div>
+          <span>Plan listo · Funciona sin internet</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="tabs">
+      <button class="tab active" data-tab="itinerario">Itinerario</button>
+      <button class="tab" data-tab="notas">Mis notas</button>
+    </div>
+
+    <!-- Sección ITINERARIO -->
+    <section id="itinerario" class="section active">
+      <div class="section-title">
+        <h2>Itinerario</h2>
+        <span>Toques para cambiar de día</span>
+      </div>
+
+      <div class="day-strip" id="dayStrip"></div>
+
+      <div class="card" id="dayCard">
+        <!-- Contenido del día seleccionado se rellena por JS -->
+      </div>
+    </section>
+
+    <!-- Sección NOTAS -->
+    <section id="notas" class="section">
+      <div class="section-title">
+        <h2>Mis notas</h2>
+        <span>Solo se guarda en este dispositivo</span>
+      </div>
+      <div class="card">
+        <p class="card-plan" style="margin-bottom: 10px; font-size: 13px;">
+          Usa este espacio como diario del viaje: cosas que no quieres olvidar,
+          gastos extra, sitios que te gusten, ideas para la próxima vez…
+        </p>
+        <textarea id="notesArea" placeholder="Escribe aquí tus notas del viaje…"></textarea>
+        <p class="notes-hint">
+          Tus notas se guardan automáticamente en este móvil (no se comparten con nadie más).
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <div>Proyecto <strong>ZeroStress</strong> · Cuba en familia · Enero 2026</div>
+    </footer>
+  </div>
+
+  <script>
+    // Datos del itinerario (adaptado de tu Excel)
+    const days = [
+      {
+        dia: "DÍA 1",
+        fecha: "J01.01.2026",
+        plan: "Salida hacia La Habana. Llegada por la tarde, traslado a la Villa Zero Stress y primera toma de contacto con el barrio.",
+        donde: "Villa Zero Stress, Párraga (La Habana)",
+        gasto: 972
+      },
+      {
+        dia: "DÍA 2",
+        fecha: "V02.01.2026",
+        plan: "Recorrido por La Habana: free tour por Habana Vieja / Centro Habana, paseo por el Malecón y tarde tranquila en familia.",
+        donde: "Villa Zero Stress, Párraga (La Habana)",
+        gasto: 40
+      },
+      {
+        dia: "DÍA 3",
+        fecha: "S03.01.2026",
+        plan: "Salida a Viñales. Ruta a caballo, visita a plantaciones de tabaco y café, miradores y noche en casa particular.",
+        donde: "Casa Gladys y Gerardo (15€ por habitación/noche)",
+        gasto: 50
+      },
+      {
+        dia: "DÍA 4",
+        fecha: "D04.01.2026",
+        plan: "Regreso a La Habana. Visita a Fusterlandia, Plaza de la Revolución y paseo por zonas icónicas de la ciudad.",
+        donde: "Villa Zero Stress, Párraga (La Habana)",
+        gasto: 30
+      },
+      {
+        dia: "DÍA 5",
+        fecha: "L05.01.2026",
+        plan: "Salida hacia Varadero con parada en el puente de Bacunayagua y miradores. Llegada al hotel y tarde de playa.",
+        donde: "Hotel Tuxpan, Varadero",
+        gasto: 50
+      },
+      {
+        dia: "DÍA 6",
+        fecha: "M06.01.2026",
+        plan: "Excursión en catamarán: navegación, baño, snorkel y descanso a lo caribeño.",
+        donde: "Hotel Tuxpan, Varadero",
+        gasto: 40
+      },
+      {
+        dia: "DÍA 7",
+        fecha: "X07.01.2026",
+        plan: "Día cubano en el Tuxpan: actividades en el hotel, paseo por el pueblo y zona nueva de Varadero.",
+        donde: "Hotel Tuxpan, Varadero",
+        gasto: 40
+      },
+      {
+        dia: "DÍA 8",
+        fecha: "J08.01.2026",
+        plan: "Vuelta a La Habana, parada en casa de Rudbeckia y tarde/noche en familia.",
+        donde: "Villa Zero Stress, Párraga (La Habana)",
+        gasto: 30
+      },
+      {
+        dia: "DÍA 9",
+        fecha: "V09.01.2026",
+        plan: "Lanchita de Regla, paseo por el puerto, visita a Regla y Casablanca, almacenes de San José y café cantante por la noche.",
+        donde: "Villa Zero Stress, Párraga (La Habana)",
+        gasto: 30
+      },
+      {
+        dia: "DÍA 10",
+        fecha: "S10.01.2026",
+        plan: "Día abierto: posible pasadía en el Blau con los niños u otra actividad en familia.",
+        donde: "Villa Zero Stress, Párraga (La Habana)",
+        gasto: 40
+      },
+      {
+        dia: "DÍA 11",
+        fecha: "D11.01.2026",
+        plan: "Fiesta de despedida familiar en La Habana. Últimos paseos, fotos y maletas.",
+        donde: "Avión (noche de vuelta)",
+        gasto: 30
+      },
+      {
+        dia: "DÍA 12",
+        fecha: "L12.01.2026",
+        plan: "Aterrizaje en Barajas y fin oficial del viaje ZeroStress Cuba 2026.",
+        donde: "Casa",
+        gasto: 0
+      }
+    ];
+
+    const dayStrip = document.getElementById("dayStrip");
+    const dayCard = document.getElementById("dayCard");
+    const tabs = document.querySelectorAll(".tab");
+    const sections = document.querySelectorAll(".section");
+    const notesArea = document.getElementById("notesArea");
+    const NOTES_KEY = "zerostress_cuba_2026_notas";
+
+    function renderDayChips() {
+      dayStrip.innerHTML = "";
+      days.forEach((day, index) => {
+        const chip = document.createElement("button");
+        chip.className = "day-chip" + (index === 0 ? " active" : "");
+        chip.dataset.index = index;
+        chip.innerHTML = `
+          ${day.dia}
+          <span>${day.fecha}</span>
+        `;
+        chip.addEventListener("click", () => selectDay(index));
+        dayStrip.appendChild(chip);
+      });
+    }
+
+    function formatCurrency(value) {
+      if (!value || isNaN(value)) return "0 €";
+      return new Intl.NumberFormat("es-ES", {
+        style: "currency",
+        currency: "EUR",
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0
+      }).format(value);
+    }
+
+    function selectDay(index) {
+      const day = days[index];
+      document.querySelectorAll(".day-chip").forEach(chip => {
+        chip.classList.toggle("active", Number(chip.dataset.index) === index);
+      });
+
+      dayCard.innerHTML = `
+        <div class="card-header">
+          <div class="card-title">${day.dia} · ${day.fecha}</div>
+          <div class="card-date">Día ${index + 1} de ${days.length}</div>
+        </div>
+        <div class="card-plan">${day.plan}</div>
+        <div class="card-meta">
+          <div class="meta-pill">
+            <span class="meta-label">Duermo en</span>
+            <span class="meta-value">${day.donde}</span>
+          </div>
+          <div class="meta-pill">
+            <span class="meta-label">Presupuesto</span>
+            <span class="meta-value">${formatCurrency(day.gasto)}</span>
+          </div>
+        </div>
+      `;
+    }
+
+    function setupTabs() {
+      tabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+          const target = tab.dataset.tab;
+          tabs.forEach(t => t.classList.toggle("active", t === tab));
+          sections.forEach(sec =>
+            sec.classList.toggle("active", sec.id === target)
+          );
+        });
+      });
+    }
+
+    function setupNotes() {
+      try {
+        const saved = localStorage.getItem(NOTES_KEY);
+        if (saved) {
+          notesArea.value = saved;
+        }
+      } catch (e) {
+        console.warn("No se pudieron cargar las notas guardadas", e);
+      }
+
+      let saveTimeout = null;
+      notesArea.addEventListener("input", () => {
+        clearTimeout(saveTimeout);
+        saveTimeout = setTimeout(() => {
+          try {
+            localStorage.setItem(NOTES_KEY, notesArea.value);
+          } catch (e) {
+            console.warn("No se pudieron guardar las notas", e);
+          }
+        }, 400);
+      });
+    }
+
+    function registerServiceWorker() {
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("./sw.js")
+          .catch(err => console.warn("SW error", err));
+      }
+    }
+
+    // Init
+    renderDayChips();
+    selectDay(0);
+    setupTabs();
+    setupNotes();
+    registerServiceWorker();
+  </script>
+</body>
+</html>

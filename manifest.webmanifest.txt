@@ -1,0 +1,10 @@
+{
+  "name": "ZeroStress · Cuba 2026",
+  "short_name": "ZeroStress Cuba",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f5efe6",
+  "theme_color": "#8b2d2d",
+  "lang": "es-ES",
+  "orientation": "portrait"
+}
