@@ -676,21 +676,23 @@ Pero confirma precios. Siempre.</p>
       });
 
       dayCard.innerHTML = `
-        <div class="card-header">
-          <div class="card-title">${day.dia} · ${day.fecha}</div>
-          <div class="card-date">Día ${index + 1} de ${days.length}</div>
-        </div>
-        <div class="card-plan" style="white-space:pre-line;">${day.plan}</div>
-        <div class="card-meta">
-          <div class="meta-pill">
-            <span class="meta-label">Dormimos en</span>
-            <span class="meta-value">${day.donde}</span>
-          </div>
-          <div class="meta-pill">
-            <span class="meta-label">Presupuesto</span>
-            <span class="meta-value">${formatCurrency(day.gasto)}</span>
-          </div>
-        </div>
+      <div class="card-meta">
+  <div class="meta-pill">
+    <span class="meta-label">Dormimos en</span>
+    <span class="meta-value">${day.donde}</span>
+  </div>
+
+  <div class="meta-pill">
+    <span class="meta-label">Presupuesto</span>
+    <span class="meta-value">${formatCurrency(day.gasto)}</span>
+  </div>
+
+  <div class="meta-pill">
+    <span class="meta-label">Reto del día</span>
+    <span class="meta-value">${day.reto || "—"}</span>
+  </div>
+</div>
+
       `;
     }
 
@@ -746,6 +748,7 @@ Pero confirma precios. Siempre.</p>
   </script>
 </body>
 </html>
+
 
 
 
