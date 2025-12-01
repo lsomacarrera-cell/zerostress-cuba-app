@@ -1,32 +1,15 @@
-const CACHE_NAME = "zerostress-cuba-2026-v1";
-const ASSETS = [
-  "./",
-  "./index.html",
-  "./manifest.webmanifest"
-];
-
-self.addEventListener("install", event => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => cache.addAll(ASSETS))
-  );
+self.addEventListener("install", () => {
+  self.skipWaiting(); // activa el nuevo SW al instante
 });
 
-self.addEventListener("activate", event => {
-  event.waitUntil(
-    caches.keys().then(keys =>
-      Promise.all(
-        keys
-          .filter(key => key !== CACHE_NAME)
-          .map(key => caches.delete(key))
-      )
-    )
-  );
+self.addEventListener("activate", () => {
+  self.clients.claim(); // toma control sin esperar
 });
 
-self.addEventListener("fetch", event => {
+self.addEventListener("fetch", (event) => {
   event.respondWith(
-    caches.match(event.request).then(cached => {
-      return cached || fetch(event.request);
-    })
+    fetch(event.request)
+      .then((response) => response) // siempre intenta traer lo nuevo
+      .catch(() => caches.match(event.request)) // si no hay internet, usa lo último guardado
   );
 });
