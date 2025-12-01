@@ -1,22 +1,23 @@
 {
   "name": "ZeroStress · Cuba 2026",
   "short_name": "ZeroStress",
-  "start_url": "./index.html",
+  "start_url": "/zerostress-cuba-app/",
   "display": "standalone",
   "background_color": "#f5efe6",
   "theme_color": "#1cafa8",
- "icons": [
-  {
-    "src": "logo-zerostress-192.png",
-    "sizes": "192x192",
-    "type": "image/png"
-  },
-  {
-    "src": "logo-zerostress-512.png",
-    "sizes": "512x512",
-    "type": "image/png"
-  }
-]
+  "icons": [
+    {
+      "src": "logo-zerostress-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "logo-zerostress-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
 
 
 
