@@ -12,8 +12,8 @@
   <style>
     :root {
       --color-fondo: #f5efe6;
---color-primario: #1cafa8;   /* aguamarina caribeña */
---color-secundario: #0a4e6c; /* azul mar hondo */
+      --color-primario: #1cafa8;   /* aguamarina caribeña */
+      --color-secundario: #0a4e6c; /* azul mar hondo */
       --color-card: #fffaf3;
       --color-borde: #d3bfa5;
       --color-texto: #2b2520;
@@ -87,7 +87,6 @@
       align-items: center;
       gap: 6px;
       background: rgba(28, 175, 168, 0.12);
-      color: #0a4e6c;
       padding: 4px 10px;
       font-size: 11px;
       color: var(--color-secundario);
@@ -169,12 +168,12 @@
     }
 
     .day-chip.active {
-     background: #1cafa8; /* aguamarina */
-     color: #fffaf3;
-     border-color: #1cafa8;
-     box-shadow: 0 4px 10px rgba(28, 175, 168, 0.35);
-     transform: translateY(-1px);
-     }
+      background: #1cafa8; /* aguamarina */
+      color: #fffaf3;
+      border-color: #1cafa8;
+      box-shadow: 0 4px 10px rgba(28, 175, 168, 0.35);
+      transform: translateY(-1px);
+    }
 
 
     .card {
@@ -280,6 +279,7 @@
       font-size: 13px;
       resize: vertical;
       background: #fffaf3;
+      color: #fffaf3;
       color: var(--color-texto);
       box-shadow: 0 3px 8px rgba(0, 0, 0, 0.07) inset;
     }
@@ -347,7 +347,7 @@
   <div class="app-container">
     <header>
       <img src="./logo-zerostress.png" alt="ZeroStress Logo" 
-     style="width:58px; height:58px; border-radius:50%; object-fit:cover; box-shadow:0 4px 12px rgba(0,0,0,0.25);">
+      style="width:58px; height:58px; border-radius:50%; object-fit:cover; box-shadow:0 4px 12px rgba(0,0,0,0.25);">
       <div class="header-text">
         <h1>ZeroStress · Cuba</h1>
         <p>Viaje del 1 al 12 de enero · La Habana · Viñales · Varadero</p>
@@ -358,137 +358,133 @@
       </div>
     </header>
 
-     <div class="tabs">
-  <button class="tab active" data-tab="preparativos">Preparativos</button>
-  <button class="tab" data-tab="diccionario">Diccionario</button>
-  <button class="tab" data-tab="itinerario">Itinerario</button>
-  <button class="tab" data-tab="notas">Mis notas</button>
-  <button class="tab" data-tab="tips">Tips</button>
-</div>
-
-
-
-<!-- Sección PREPARATIVOS -->
-<section id="preparativos" class="section active">
-  <div class="section-title">
-    <h2>Preparativos</h2>
-    <span>Todo lo que hay que preparar antes de viajar</span>
-  </div>
-
-  <div class="card" style="font-size:13px; line-height:1.55; color:#0a4e6c;">
-
-    <p style="margin:0 0 12px;">
-      <strong>🧳 Cosas que meter en mi maleta</strong>
-    </p>
-
-    <p style="margin:0 0 8px;">💊 Medicinas para mí y para dejar</p>
-    <p style="margin:0 0 8px;">🧻 Rollo de papel higiénico o Kleenex</p>
-    <p style="margin:0 0 8px;">🦟 Antimosquitos a tope</p>
-     <p style="margin:0 0 12px;">🫧 Toallitas para limpiarnos las manos en cualquier momento</p>
-
-<!-- ESPACIO ENTRE BLOQUES -->
-<div style="height:16px;"></div>
-
-    <p style="margin:0 0 10px;">
-    <strong>🎁 Cosas que puedo llevar para regalar</strong>
-    </p>
-
-
-    <p style="margin:0 0 8px;">🖊️ Bolígrafos</p>
-    <p style="margin:0 0 8px;">🍬 Chicles, caramelos</p>
-    <p style="margin:0 0 8px;">🛍️ Bolsas de tela de publicidad de aquí (les encantan)</p>
-  </div>
-
-</section>
-
-
-<!-- Sección DICCIONARIO -->
-<section id="diccionario" class="section">
-  <div class="section-title">
-    <h2>Diccionario</h2>
-    <span>Frases útiles para sobrevivir en Cuba</span>
-  </div>
-
-  <div class="card">
-    <div style="font-size:13px; line-height:1.55; white-space:normal; color:#0a4e6c;">
-
-      <p style="margin:0 0 12px;"><strong>🇨🇺 Asere / Acere</strong><br>
-      Amigo, colega cercano. Saludo típico: “Oye asere, qué vuelta?”.</p>
-
-      <p style="margin:0 0 12px;"><strong>👋 Qué bolá</strong><br>
-      ¿Qué tal? ¿Cómo estás? Saludo universal en Cuba.</p>
-
-      <p style="margin:0 0 12px;"><strong>🚌 Guagua</strong><br>
-      Autobús. “Vamos en guagua”.</p>
-
-      <p style="margin:0 0 12px;"><strong>🕶️ Jinetero</strong><br>
-      Persona que te ofrece taxis, puros, excursiones… muy insistente pero no peligrosa. También puede ofrecer otro tipo de servicios ;-).</p>
-
-      <p style="margin:0 0 12px;"><strong>💵 Fula / fulitas</strong><br>
-      Dólares, euros, divisas... lo que más quieren todos.</p>
-
-      <p style="margin:0 0 12px;"><strong>🤚 Hacer botella</strong><br>
-      Hacer autostop. Te paran levantando la mano. Hay todo un lenguaje de signos para saber hacia dónde va.</p>
-
-      <p style="margin:0 0 12px;"><strong>🚗 Almendrón o máquina</strong><br>
-      Coche clásico usado como taxi colectivo. Ícono de Cuba.</p>
-
-      <p style="margin:0 0 12px;"><strong>🚕 Colectivo</strong><br>
-      Taxi compartido con más gente. Más barato.</p>
-
-      <p style="margin:0 0 12px;"><strong>🚕 La nave</strong><br>
-      Nuestro Uber cubano.</p>
-
-      <p style="margin:0 0 12px;"><strong>🥤 Refresco</strong><br>
-      Cualquier bebida dulce de lata.</p>
-
-      <p style="margin:0 0 12px;"><strong>🤝 Socio / socio mío</strong><br>
-      Amigo cercano. Muy común en la calle.</p>
-
-      <p style="margin:0 0 12px;"><strong>👨‍👩‍👧 Mi hermano / mi hermana</strong><br>
-      Forma amistosa y cariñosa, se usa aunque no os conozcáis.</p>
-
-      <p style="margin:0 0 12px;"><strong>🗣️ Dar muela</strong><br>
-      Hablar demasiado o intentar convencerte de algo.</p>
-
-      <p style="margin:0 0 12px;"><strong>😶 Estás pasmao</strong><br>
-      Estás distraído, en babia.</p>
-
-      <p style="margin:0 0 12px;"><strong>🛠️ Resolver</strong><br>
-      El arte cubano de arreglar problemas sin recursos.</p>
-
-      <p style="margin:0 0 12px;"><strong>🔧 Invento</strong><br>
-      Apaño creativo cubano.</p>
-
-      <p style="margin:0 0 12px;"><strong>🌍 Yuma</strong><br>
-      Extranjero. Tú eres una yuma, sí.</p>
-
-      <p style="margin:0 0 12px;"><strong>⚡ La lucha</strong><br>
-      La vida diaria, el esfuerzo de sobrevivir.</p>
-
-      <p style="margin:0 0 12px;"><strong>🗣️ Dime algo</strong><br>
-      ¿Hay novedades?</p>
-
-      <p style="margin:0 0 12px;"><strong>⏳ Un momentico</strong><br>
-      Puede ser de 10 minutos a media vida.</p>
-
-      <p style="margin:0 0 12px;"><strong>💟 Estás en talla</strong><br>
-      Estás genial, estás estupendo.</p>
-
-      <p style="margin:0 0 12px;"><strong>👶 Estar hecho un pepillo</strong><br>
-      Parecer más joven que tu edad.</p>
-
+    <div class="tabs">
+      <button class="tab active" data-tab="preparativos">Preparativos</button>
+      <button class="tab" data-tab="diccionario">Diccionario</button>
+      <button class="tab" data-tab="itinerario">Itinerario</button>
+      <button class="tab" data-tab="notas">Mis notas</button>
+      <button class="tab" data-tab="tips">Tips</button>
     </div>
-  </div>
-</section>
+
+    <!-- Sección PREPARATIVOS -->
+    <section id="preparativos" class="section active">
+      <div class="section-title">
+        <h2>Preparativos</h2>
+        <span>Todo lo que hay que preparar antes de viajar</span>
+      </div>
+
+      <div class="card" style="font-size:13px; line-height:1.55; color:#0a4e6c;">
+
+        <p style="margin:0 0 12px;">
+          <strong>🧳 Cosas que meter en mi maleta</strong>
+        </p>
+
+        <p style="margin:0 0 8px;">💊 Medicinas para mí y para dejar</p>
+        <p style="margin:0 0 8px;">🧻 Rollo de papel higiénico o Kleenex</p>
+        <p style="margin:0 0 8px;">🦟 Antimosquitos a tope</p>
+        <p style="margin:0 0 12px;">🫧 Toallitas para limpiarnos las manos en cualquier momento</p>
+
+        <!-- ESPACIO ENTRE BLOQUES -->
+        <div style="height:16px;"></div>
+
+        <p style="margin:0 0 10px;">
+          <strong>🎁 Cosas que puedo llevar para regalar</strong>
+        </p>
+
+        <p style="margin:0 0 8px;">🖊️ Bolígrafos</p>
+        <p style="margin:0 0 8px;">🍬 Chicles, caramelos</p>
+        <p style="margin:0 0 8px;">🛍️ Bolsas de tela de publicidad de aquí (les encantan)</p>
+      </div>
+
+    </section>
 
 
-    
+    <!-- Sección DICCIONARIO -->
+    <section id="diccionario" class="section">
+      <div class="section-title">
+        <h2>Diccionario</h2>
+        <span>Frases útiles para sobrevivir en Cuba</span>
+      </div>
+
+      <div class="card">
+        <div style="font-size:13px; line-height:1.55; white-space:normal; color:#0a4e6c;">
+
+          <p style="margin:0 0 12px;"><strong>🇨🇺 Asere / Acere</strong><br>
+            Amigo, colega cercano. Saludo típico: “Oye asere, qué vuelta?”.</p>
+
+          <p style="margin:0 0 12px;"><strong>👋 Qué bolá</strong><br>
+            ¿Qué tal? ¿Cómo estás? Saludo universal en Cuba.</p>
+
+          <p style="margin:0 0 12px;"><strong>🚌 Guagua</strong><br>
+            Autobús. “Vamos en guagua”.</p>
+
+          <p style="margin:0 0 12px;"><strong>🕶️ Jinetero</strong><br>
+            Persona que te ofrece taxis, puros, excursiones… muy insistente pero no peligrosa. También puede ofrecer otro tipo de servicios ;-).</p>
+
+          <p style="margin:0 0 12px;"><strong>💵 Fula / fulitas</strong><br>
+            Dólares, euros, divisas... lo que más quieren todos.</p>
+
+          <p style="margin:0 0 12px;"><strong>🤚 Hacer botella</strong><br>
+            Hacer autostop. Te paran levantando la mano. Hay todo un lenguaje de signos para saber hacia dónde va.</p>
+
+          <p style="margin:0 0 12px;"><strong>🚗 Almendrón o máquina</strong><br>
+            Coche clásico usado como taxi colectivo. Ícono de Cuba.</p>
+
+          <p style="margin:0 0 12px;"><strong>🚕 Colectivo</strong><br>
+            Taxi compartido con más gente. Más barato.</p>
+
+          <p style="margin:0 0 12px;"><strong>🚕 La nave</strong><br>
+            Nuestro Uber cubano.</p>
+
+          <p style="margin:0 0 12px;"><strong>🥤 Refresco</strong><br>
+            Cualquier bebida dulce de lata.</p>
+
+          <p style="margin:0 0 12px;"><strong>🤝 Socio / socio mío</strong><br>
+            Amigo cercano. Muy común en la calle.</p>
+
+          <p style="margin:0 0 12px;"><strong>👨‍👩‍👧 Mi hermano / mi hermana</strong><br>
+            Forma amistosa y cariñosa, se usa aunque no os conozcáis.</p>
+
+          <p style="margin:0 0 12px;"><strong>🗣️ Dar muela</strong><br>
+            Hablar demasiado o intentar convencerte de algo.</p>
+
+          <p style="margin:0 0 12px;"><strong>😶 Estás pasmao</strong><br>
+            Estás distraído, en babia.</p>
+
+          <p style="margin:0 0 12px;"><strong>🛠️ Resolver</strong><br>
+            El arte cubano de arreglar problemas sin recursos.</p>
+
+          <p style="margin:0 0 12px;"><strong>🔧 Invento</strong><br>
+            Apaño creativo cubano.</p>
+
+          <p style="margin:0 0 12px;"><strong>🌍 Yuma</strong><br>
+            Extranjero. Tú eres una yuma, sí.</p>
+
+          <p style="margin:0 0 12px;"><strong>⚡ La lucha</strong><br>
+            La vida diaria, el esfuerzo de sobrevivir.</p>
+
+          <p style="margin:0 0 12px;"><strong>🗣️ Dime algo</strong><br>
+            ¿Hay novedades?</p>
+
+          <p style="margin:0 0 12px;"><strong>⏳ Un momentico</strong><br>
+            Puede ser de 10 minutos a media vida.</p>
+
+          <p style="margin:0 0 12px;"><strong>💟 Estás en talla</strong><br>
+            Estás genial, estás estupendo.</p>
+
+          <p style="margin:0 0 12px;"><strong>👶 Estar hecho un pepillo</strong><br>
+            Parecer más joven que tu edad.</p>
+
+        </div>
+      </div>
+    </section>
+
+
     <!-- Sección ITINERARIO -->
     <section id="itinerario" class="section">
       <div class="section-title">
         <h2>Consulta aquí los planes de cada día</h2>
-       </div>
+      </div>
 
       <div class="day-strip" id="dayStrip"></div>
 
@@ -515,134 +511,134 @@
       </div>
     </section>
 
+    <!-- Sección TIPS -->
     <section id="tips" class="section">
-  <div class="section-title">
-    <h2>Tips para sobrevivir en Cuba</h2>
-    <span>Consejos prácticos que te ahorran disgustos</span>
-  </div>
+      <div class="section-title">
+        <h2>Tips para sobrevivir en Cuba</h2>
+        <span>Consejos prácticos que te ahorran disgustos</span>
+      </div>
 
-  <div class="card" style="font-size:13px; line-height:1.55; color:#0a4e6c;">
-    <p style="margin:0 0 10px;"><strong>💵 Lleva divisa en efectivo</strong><br>
-    Euros mejor que dólares. Cambia solo en lugares de confianza.</p>
+      <div class="card" style="font-size:13px; line-height:1.55; color:#0a4e6c;">
+        <p style="margin:0 0 10px;"><strong>💵 Lleva divisa en efectivo</strong><br>
+          Euros mejor que dólares. Cambia solo en lugares de confianza.</p>
 
-    <p style="margin:0 0 10px;"><strong>📶 Internet es una aventura</strong><br>
-    No dependas del wifi. Descarga todo antes de viajar.</p>
+        <p style="margin:0 0 10px;"><strong>📶 Internet es una aventura</strong><br>
+          No dependas del wifi. Descarga todo antes de viajar.</p>
 
-    <p style="margin:0 0 10px;"><strong>🚕 Los taxis no tienen taxímetro</strong><br>
-    Pregunta el precio siempre antes de subirte. Siempre.</p>
+        <p style="margin:0 0 10px;"><strong>🚕 Los taxis no tienen taxímetro</strong><br>
+          Pregunta el precio siempre antes de subirte. Siempre.</p>
 
-    <p style="margin:0 0 10px;"><strong>🚰 No bebas agua del grifo</strong><br>
-    Ni se te ocurra. Compra botellas cerradas.</p>
+        <p style="margin:0 0 10px;"><strong>🚰 No bebas agua del grifo</strong><br>
+          Ni se te ocurra. Compra botellas cerradas.</p>
 
-    <p style="margin:0 0 10px;"><strong>🛍️ Si ves algo que te gusta, cómpralo</strong><br>
-    Nunca sabes si mañana habrá.</p>
+        <p style="margin:0 0 10px;"><strong>🛍️ Si ves algo que te gusta, cómpralo</strong><br>
+          Nunca sabes si mañana habrá.</p>
 
-    <p style="margin:0 0 10px;"><strong>⚡ Cortes de luz</strong><br>
-    Son normales. Ten siempre cargadores externos.</p>
+        <p style="margin:0 0 10px;"><strong>⚡ Cortes de luz</strong><br>
+          Son normales. Ten siempre cargadores externos.</p>
 
-    <p style="margin:0 0 10px;"><strong>🚗 Si te ofrecen “resolver”</strong><br>
-    Bienvenido al sistema operativo cubano.</p>
+        <p style="margin:0 0 10px;"><strong>🚗 Si te ofrecen “resolver”</strong><br>
+          Bienvenido al sistema operativo cubano.</p>
 
-    <p style="margin:0 0 10px;"><strong>🤝 La gente es encantadora</strong><br>
-    Pero no seas yuma inocente. Sonríe, pregunta, confirma.</p>
-  </div>
-</section>
+        <p style="margin:0 0 10px;"><strong>🤝 La gente es encantadora</strong><br>
+          Pero no seas yuma inocente. Sonríe, pregunta, confirma.</p>
+      </div>
+    </section>
 
-    
+
     <footer>
       <div>Proyecto <strong>ZeroStress</strong> · Cuba · Enero 2026</div>
     </footer>
   </div>
 
   <script>
-    // Datos del itinerario (adaptado de tu Excel)
+    // Datos del itinerario
     const days = [
-  {
-    dia: "DÍA 1",
-    fecha: "J01.01.2026",
-    plan: "🛫 Vuelo a La Habana.\nLlegada al aeropuerto José Martí sobre las 19h.\nTraslado a la Villa ZeroStress.\nPrimera toma de contacto con el barrio de Párraga.",
-    donde: "Villa Zero Stress, Párraga (La Habana)",
-    gasto: 972
-  },
-  {
-    dia: "DÍA 2",
-    fecha: "V02.01.2026",
-    plan: "Recorrido por La Habana Vieja y Centro Habana.\nPaseo por el Malecón.\nPaseo del Prado.\nDaiquiri en La Floridita.\nMojito en La Bodeguita del Medio.",
-    donde: "Villa Zero Stress, Párraga (La Habana)",
-    gasto: 40
-  },
-  {
-    dia: "DÍA 3",
-    fecha: "S03.01.2026",
-    plan: "🐎 Salida a Viñales.\nRuta a caballo.\nVisita a plantaciones de tabaco y café.\nParada en miradores.\nCena y baile en el Centro Cultural Polo Montañez.\nNoche en casa particular.",
-    donde: "Casa Gladys y Gerardo (15€ por habitación/noche)",
-    gasto: 50
-  },
-  {
-    dia: "DÍA 4",
-    fecha: "D04.01.2026",
-    plan: "Regreso a La Habana.\nVisita a Fusterlandia.\nParada en la Plaza de la Revolución.\nCallejón de Hamel.\n🍨 Helado en Coppelia.\nPaseo por La Rampa.\nVisita al Hotel Nacional.",
-    donde: "Villa Zero Stress, Párraga (La Habana)",
-    gasto: 30
-  },
-  {
-    dia: "DÍA 5",
-    fecha: "L05.01.2026",
-    plan: "🏖️ Salida hacia Varadero.\nParada en el Puente de Bacunayagua.\nMiradores camino a Matanzas.\nLlegada al hotel.\nTarde de playa.",
-    donde: "Hotel Tuxpan, Varadero",
-    gasto: 50
-  },
-  {
-    dia: "DÍA 6",
-    fecha: "M06.01.2026",
-    plan: "⛵ Excursión en catamarán.\nNavegación.\nBaño.\nSnorkel.\nDescanso caribeño de calidad.",
-    donde: "Hotel Tuxpan, Varadero",
-    gasto: 40
-  },
-  {
-    dia: "DÍA 7",
-    fecha: "X07.01.2026",
-    plan: "🇨🇺 Día cubano en el Tuxpan.\nActividades del hotel.\nPaseo por el pueblo.\nVisita a la zona nueva de Varadero.",
-    donde: "Hotel Tuxpan, Varadero",
-    gasto: 40
-  },
-  {
-    dia: "DÍA 8",
-    fecha: "J08.01.2026",
-    plan: "Vuelta a La Habana.\nParada en casa de Rudbeckia.\nTarde y noche en familia en Párraga.",
-    donde: "Villa Zero Stress, Párraga (La Habana)",
-    gasto: 30
-  },
-  {
-    dia: "DÍA 9",
-    fecha: "V09.01.2026",
-    plan: "Lanchita de Regla.\nVisita a la Iglesia de Regla.\nPaseo por el puerto.\nCompras en los Almacenes de San José.\nCafé cantante por la noche.",
-    donde: "Villa Zero Stress, Párraga (La Habana)",
-    gasto: 30
-  },
-  {
-    dia: "DÍA 10",
-    fecha: "S10.01.2026",
-    plan: "Día abierto.\nPosible pasadía en el Blau.\nOtras actividades en familia.\nVisita a la sobrina y primo de Paco.\nVisita a Tere.",
-    donde: "Villa Zero Stress, Párraga (La Habana)",
-    gasto: 40
-  },
-  {
-    dia: "DÍA 11",
-    fecha: "D11.01.2026",
-    plan: "Fiesta de despedida familiar.\nÚltimos paseos por La Habana.\nFotos.\nPreparación de maletas.",
-    donde: "Avión (noche de vuelta)",
-    gasto: 30
-  },
-  {
-    dia: "DÍA 12",
-    fecha: "L12.01.2026",
-    plan: "🛬 Aterrizaje en Madrid.\nFin del viaje ZeroStress Cuba 2026.",
-    donde: "Casa",
-    gasto: 0
-  }
-];
-
+      {
+        dia: "DÍA 1",
+        fecha: "J01.01.2026",
+        plan: "🛫 Vuelo a La Habana.\nLlegada al aeropuerto José Martí sobre las 19h.\nTraslado a la Villa ZeroStress.\nPrimera toma de contacto con el barrio de Párraga.",
+        donde: "Villa Zero Stress, Párraga (La Habana)",
+        gasto: 972
+      },
+      {
+        dia: "DÍA 2",
+        fecha: "V02.01.2026",
+        plan: "Recorrido por La Habana Vieja y Centro Habana.\nPaseo por el Malecón.\nPaseo del Prado.\nDaiquiri en La Floridita.\nMojito en La Bodeguita del Medio.",
+        donde: "Villa Zero Stress, Párraga (La Habana)",
+        gasto: 40
+      },
+      {
+        dia: "DÍA 3",
+        fecha: "S03.01.2026",
+        plan: "🐎 Salida a Viñales.\nRuta a caballo.\nVisita a plantaciones de tabaco y café.\nParada en miradores.\nCena y baile en el Centro Cultural Polo Montañez.\nNoche en casa particular.",
+        donde: "Casa Gladys y Gerardo (15€ por habitación/noche)",
+        gasto: 50
+      },
+      {
+        dia: "DÍA 4",
+        fecha: "D04.01.2026",
+        plan: "Regreso a La Habana.\nVisita a Fusterlandia.\nParada en la Plaza de la Revolución.\nCallejón de Hamel.\n🍨 Helado en Coppelia.\nPaseo por La Rampa.\nVisita al Hotel Nacional.",
+        donde: "Villa Zero Stress, Párraga (La Habana)",
+        gasto: 30
+      },
+      {
+        dia: "DÍA 5",
+        fecha: "L05.01.2026",
+        plan: "🏖️ Salida hacia Varadero.\nParada en el Puente de Bacunayagua.\nMiradores camino a Matanzas.\nLlegada al hotel.\nTarde de playa.",
+        donde: "Hotel Tuxpan, Varadero",
+        gasto: 50
+      },
+      {
+        dia: "DÍA 6",
+        fecha: "M06.01.2026",
+        plan: "⛵ Excursión en catamarán.\nNavegación.\nBaño.\nSnorkel.\nDescanso caribeño de calidad.",
+        donde: "Hotel Tuxpan, Varadero",
+        gasto: 40
+      },
+      {
+        dia: "DÍA 7",
+        fecha: "X07.01.2026",
+        plan: "🇨🇺 Día cubano en el Tuxpan.\nActividades del hotel.\nPaseo por el pueblo.\nVisita a la zona nueva de Varadero.",
+        donde: "Hotel Tuxpan, Varadero",
+        gasto: 40
+      },
+      {
+        dia: "DÍA 8",
+        fecha: "J08.01.2026",
+        plan: "Vuelta a La Habana.\nParada en casa de Rudbeckia.\nTarde y noche en familia en Párraga.",
+        donde: "Villa Zero Stress, Párraga (La Habana)",
+        gasto: 30
+      },
+      {
+        dia: "DÍA 9",
+        fecha: "V09.01.2026",
+        plan: "Lanchita de Regla.\nVisita a la Iglesia de Regla.\nPaseo por el puerto.\nCompras en los Almacenes de San José.\nCafé cantante por la noche.",
+        donde: "Villa Zero Stress, Párraga (La Habana)",
+        gasto: 30
+      },
+      {
+        dia: "DÍA 10",
+        fecha: "S10.01.2026",
+        plan: "Día abierto.\nPosible pasadía en el Blau.\nOtras actividades en familia.\nVisita a la sobrina y primo de Paco.\nVisita a Tere.",
+        donde: "Villa Zero Stress, Párraga (La Habana)",
+        gasto: 40
+      },
+      {
+        dia: "DÍA 11",
+        fecha: "D11.01.2026",
+        plan: "Fiesta de despedida familiar.\nÚltimos paseos por La Habana.\nFotos.\nPreparación de maletas.",
+        donde: "Avión (noche de vuelta)",
+        gasto: 30
+      },
+      {
+        dia: "DÍA 12",
+        fecha: "L12.01.2026",
+        plan: "🛬 Aterrizaje en Madrid.\nFin del viaje ZeroStress Cuba 2026.",
+        donde: "Casa",
+        gasto: 0
+      }
+    ];
 
     const dayStrip = document.getElementById("dayStrip");
     const dayCard = document.getElementById("dayCard");
@@ -657,10 +653,10 @@
         const chip = document.createElement("button");
         chip.className = "day-chip" + (index === 0 ? " active" : "");
         chip.dataset.index = index;
-        chip.innerHTML = 
+        chip.innerHTML = `
           ${day.dia}
           <span>${day.fecha}</span>
-        ;
+        `;
         chip.addEventListener("click", () => selectDay(index));
         dayStrip.appendChild(chip);
       });
@@ -682,12 +678,12 @@
         chip.classList.toggle("active", Number(chip.dataset.index) === index);
       });
 
-      dayCard.innerHTML = 
+      dayCard.innerHTML = `
         <div class="card-header">
           <div class="card-title">${day.dia} · ${day.fecha}</div>
           <div class="card-date">Día ${index + 1} de ${days.length}</div>
         </div>
-     <div class="card-plan" style="white-space:pre-line;">${day.plan}</div>
+        <div class="card-plan" style="white-space:pre-line;">${day.plan}</div>
         <div class="card-meta">
           <div class="meta-pill">
             <span class="meta-label">Dormimos en</span>
@@ -698,7 +694,7 @@
             <span class="meta-value">${formatCurrency(day.gasto)}</span>
           </div>
         </div>
-      ;
+      `;
     }
 
     function setupTabs() {
@@ -753,6 +749,8 @@
   </script>
 </body>
 </html>
+
+
 
 
 
