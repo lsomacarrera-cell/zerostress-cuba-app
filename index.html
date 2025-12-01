@@ -671,32 +671,44 @@ Pero confirma precios. Siempre.</p>
       }).format(value);
     }
 
-    function selectDay(index) {
-      const day = days[index];
-      document.querySelectorAll(".day-chip").forEach(chip => {
-        chip.classList.toggle("active", Number(chip.dataset.index) === index);
-      });
+  function selectDay(index) {
+  const day = days[index];
 
-      dayCard.innerHTML = `
-      <div class="card-meta">
-  <div class="meta-pill">
-    <span class="meta-label">Dormimos en</span>
-    <span class="meta-value">${day.donde}</span>
-  </div>
+  // Marcar chip activo
+  document.querySelectorAll(".day-chip").forEach(chip => {
+    chip.classList.toggle("active", Number(chip.dataset.index) === index);
+  });
 
-  <div class="meta-pill">
-    <span class="meta-label">Presupuesto</span>
-    <span class="meta-value">${formatCurrency(day.gasto)}</span>
-  </div>
+  // Pintar tarjeta del día
+  dayCard.innerHTML = `
+    <div class="card-header">
+      <div class="card-title">${day.dia} · ${day.fecha}</div>
+      <div class="card-date">Día ${index + 1} de ${days.length}</div>
+    </div>
 
-  <div class="meta-pill">
-    <span class="meta-label">Reto del día</span>
-    <span class="meta-value">${day.reto || "—"}</span>
-  </div>
-</div>
+    <div class="card-plan" style="white-space:pre-line;">
+      ${day.plan}
+    </div>
 
-      `;
-    }
+    <div class="card-meta">
+      <div class="meta-pill">
+        <span class="meta-label">Dormimos en</span>
+        <span class="meta-value">${day.donde}</span>
+      </div>
+
+      <div class="meta-pill">
+        <span class="meta-label">Presupuesto</span>
+        <span class="meta-value">${formatCurrency(day.gasto)}</span>
+      </div>
+
+      <div class="meta-pill">
+        <span class="meta-label">Reto del día</span>
+        <span class="meta-value">${day.reto || "—"}</span>
+      </div>
+    </div>
+  `;
+}
+
 
     function setupTabs() {
       tabs.forEach(tab => {
@@ -750,6 +762,7 @@ Pero confirma precios. Siempre.</p>
   </script>
 </body>
 </html>
+
 
 
 
