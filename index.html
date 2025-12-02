@@ -736,10 +736,13 @@ Pero confirma precios. Siempre.</p>
         <span class="meta-value">${formatCurrency(day.gasto)}</span>
       </div>
 
-      <div class="meta-pill">
-        <span class="meta-label">Reto del día</span>
-        <span class="meta-value">${day.reto || "—"}</span>
-      </div>
+        <div class="meta-pill">
+         <span class="meta-label">Reto del día</span>
+          <span class="meta-value" style="white-space:pre-line;">
+        ${day.reto || "—"}
+          </span>
+        </div>
+
     </div>
   `;
 }
@@ -797,6 +800,7 @@ Pero confirma precios. Siempre.</p>
   </script>
 </body>
 </html>
+
 
 
 
