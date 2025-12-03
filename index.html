@@ -564,245 +564,238 @@ Pero confirma precios. Siempre.</p>
     </footer>
   </div>
 
-  <script>
-    // Datos del itinerario
-   const days = [
-  {
-    dia: "DÍA 1",
-    fecha: "J01.01.2026",
-    plan: "🛫 Vuelo a La Habana.\nLlegada al aeropuerto José Martí sobre las 19h.\nTraslado a Villa ZERO STRESS.\nPrimera toma de contacto con el barrio de Párraga.",
-    donde: "Villa ZERO STRESS, Párraga (La Habana)",
-    gasto: 972,
-    reto: "Aprendernos los nombres de toda la gente que conoceremos hoy 😜"
-  },
+ <script>
+document.addEventListener("DOMContentLoaded", () => {
+  // Datos del itinerario
+  const days = [
+    {
+      dia: "DÍA 1",
+      fecha: "J01.01.2026",
+      plan: "🛫 Vuelo a La Habana.\nLlegada al aeropuerto José Martí sobre las 19h.\nTraslado a Villa ZERO STRESS.\nPrimera toma de contacto con el barrio de Párraga.",
+      donde: "Villa ZERO STRESS, Párraga (La Habana)",
+      gasto: 972,
+      reto: "Aprendernos los nombres de toda la gente que conoceremos hoy 😜"
+    },
+    {
+      dia: "DÍA 2",
+      fecha: "V02.01.2026",
+      plan: "Recorrido por La Habana Vieja y Centro Habana.\nPaseo por el Malecón.\nPaseo del Prado.\nSubir a las terrazas de los hoteles Gran Hotel Manzana Kempinski y Royalton Paseo.\nDaiquiri en La Floridita.\nMojito en La Bodeguita del Medio.",
+      donde: "Villa ZERO STRESS, Párraga (La Habana)",
+      gasto: 40,
+      reto: "No acabar en nota🥂.\nEnrrollarnos con algún cubano/a, charlar un buen rato, y conseguir despedirte sin tenerle que dar nada."
+    },
+    {
+      dia: "DÍA 3",
+      fecha: "S03.01.2026",
+      plan: "Salida a Viñales.\nRuta a caballo.\nVisita a plantaciones de tabaco y café.\nParada en miradores.\nCena y baile en el Centro Cultural Polo Montañez.\nNoche en casa particular.",
+      donde: "Casa Gladys y Gerardo (15€ por habitación/noche)",
+      gasto: 50,
+      reto: "Subirnos al caballo sin gritar y sin cara de pánico 🐎 mientras le damos una calada a un puro recién torcido."
+    },
+    {
+      dia: "DÍA 4",
+      fecha: "D04.01.2026",
+      plan: "Regreso a La Habana.\nVisita a Fusterlandia.\nLa FAC.\nParada en la Plaza de la Revolución.\nCallejón de Hamel.\n🍨 Helado en Coppelia.\nPaseo por La Rampa.\nVisita al Hotel Nacional.",
+      donde: "Villa ZERO STRESS, Párraga (La Habana)",
+      gasto: 30,
+      reto: "Pedir una ensalada en Coppelia sin marearnos con los sabores 🍨"
+    },
+    {
+      dia: "DÍA 5",
+      fecha: "L05.01.2026",
+      plan: "🏖️Salida hacia Varadero.\nParada en el Puente de Bacunayagua.\nMiradores camino a Matanzas.\nLlegada al hotel.\nTarde de playa.",
+      donde: "Hotel Tuxpan, Varadero",
+      gasto: 50,
+      reto: "Decir 5 veces seguidas el nombre del puente sin equivocarnos."
+    },
+    {
+      dia: "DÍA 6",
+      fecha: "M06.01.2026",
+      plan: "⛵Excursión en catamarán.\nNavegación.\nBaño.\nSnorkel.\nDescanso caribeño de calidad.",
+      donde: "Hotel Tuxpan, Varadero",
+      gasto: 40,
+      reto: "Conseguir un autógrafo de Henry.\nFormar parte del Show subiéndonos al escenario (esto lleva premio😉)... Tenemos estos 3 días en el Tuxpan para lograrlo."
+    },
+    {
+      dia: "DÍA 7",
+      fecha: "X07.01.2026",
+      plan: "🇨🇺 Día cubano en el Tuxpan.\nActividades del hotel.\nPaseo por el pueblo.\nVisita a la zona nueva de Varadero.",
+      donde: "Hotel Tuxpan, Varadero",
+      gasto: 40,
+      reto: "Conseguir colarnos en la 420 y hacer foto que lo certifique.\nBailar la conga."
+    },
+    {
+      dia: "DÍA 8",
+      fecha: "J08.01.2026",
+      plan: "Vuelta a La Habana.\nParada en casa de Rudbeckia.\nTarde y noche en familia en Párraga.",
+      donde: "Villa ZERO STRESS, Párraga (La Habana)",
+      gasto: 30,
+      reto: "Hablar con un cubano y aprender una palabra nueva que compartiremos con el resto en alguna frase para sorprender a todos."
+    },
+    {
+      dia: "DÍA 9",
+      fecha: "V09.01.2026",
+      plan: "Lanchita de Regla.\nVisita a la Iglesia de Regla.\nPaseo por el puerto.\nCompras en los Almacenes de San José.\nCafé cantante por la noche.",
+      donde: "Villa ZERO STRESS, Párraga (La Habana)",
+      gasto: 30,
+      reto: "Comprar algo en los Almacenes San José regateando sin pasarnos 😅"
+    },
+    {
+      dia: "DÍA 10",
+      fecha: "S10.01.2026",
+      plan: "Día abierto.\nPosible pasadía en el Blau.\nOtras actividades en familia.\nVisita a la sobrina y primo de Paco.\nVisita a Tere.\nCañonazo de las 21h.",
+      donde: "Villa ZERO STRESS, Párraga (La Habana)",
+      gasto: 40,
+      reto: "Conseguir pagar en pesos el Cañonazo como si fuéramos cubanos"
+    },
+    {
+      dia: "DÍA 11",
+      fecha: "D11.01.2026",
+      plan: "Fiesta de despedida familiar.\nÚltimos paseos por La Habana.\nÚltimas fotos.\nPreparación de maletas.",
+      donde: "Avión (noche de vuelta)",
+      gasto: 30,
+      reto: "Conseguir una foto grupal donde todos salgamos bien 🤳"
+    },
+    {
+      dia: "DÍA 12",
+      fecha: "L12.01.2026",
+      plan: "🛬 Aterrizaje en Madrid.\nFin del viaje ZERO STRESS Cuba 2026.",
+      donde: "Casa",
+      gasto: 0,
+      reto: "No llorar más de 3 veces antes de aterrizar😭"
+    }
+  ];
 
-  {
-    dia: "DÍA 2",
-    fecha: "V02.01.2026",
-    plan: "Recorrido por La Habana Vieja y Centro Habana.\nPaseo por el Malecón.\nPaseo del Prado.\nSubir a las terrazas de los hoteles Gran Hotel Manzana Kempinski y Royalton Paseo.\nDaiquiri en La Floridita.\nMojito en La Bodeguita del Medio.",
-    donde: "Villa ZERO STRESS, Párraga (La Habana)",
-    gasto: 40,
-    reto: "No acabar en nota🥂.\nEnrrollarnos con algún cubano/a, charlar un buen rato, y conseguir despedirte sin tenerle que dar nada."
-  },
+  const dayStrip   = document.getElementById("dayStrip");
+  const dayCard    = document.getElementById("dayCard");
+  const tabs       = document.querySelectorAll(".tab");
+  const sections   = document.querySelectorAll(".section");
+  const notesArea  = document.getElementById("notesArea");
+  const NOTES_KEY  = "zerostress_cuba_2026_notas";
 
-  {
-    dia: "DÍA 3",
-    fecha: "S03.01.2026",
-    plan: "Salida a Viñales.\nRuta a caballo.\nVisita a plantaciones de tabaco y café.\nParada en miradores.\nCena y baile en el Centro Cultural Polo Montañez.\nNoche en casa particular.",
-    donde: "Casa Gladys y Gerardo (15€ por habitación/noche)",
-    gasto: 50,
-    reto: "Subirnos al caballo sin gritar y sin cara de pánico 🐎 mientras le damos una calada a un puro recién torcido."
-  },
-
-  {
-    dia: "DÍA 4",
-    fecha: "D04.01.2026",
-    plan: "Regreso a La Habana.\nVisita a Fusterlandia.\nLa FAC.\nParada en la Plaza de la Revolución.\nCallejón de Hamel.\n🍨 Helado en Coppelia.\nPaseo por La Rampa.\nVisita al Hotel Nacional.",
-    donde: "Villa ZERO STRESS, Párraga (La Habana)",
-    gasto: 30,
-    reto: "Pedir una ensalada en Coppelia sin marearnos con los sabores 🍨"
-  },
-
-  {
-    dia: "DÍA 5",
-    fecha: "L05.01.2026",
-    plan: "🏖️Salida hacia Varadero.\nParada en el Puente de Bacunayagua.\nMiradores camino a Matanzas.\nLlegada al hotel.\nTarde de playa.",
-    donde: "Hotel Tuxpan, Varadero",
-    gasto: 50,
-    reto: "Decir 5 veces seguidas el nombre del puente sin equivocarnos."
-  },
-
-  {
-    dia: "DÍA 6",
-    fecha: "M06.01.2026",
-    plan: "⛵Excursión en catamarán.\nNavegación.\nBaño.\nSnorkel.\nDescanso caribeño de calidad.",
-    donde: "Hotel Tuxpan, Varadero",
-    gasto: 40,
-    reto: "Conseguir un autógrafo de Henry.\nFormar parte del Show subiéndonos al escenario (esto lleva premio😉)... Tenemos estos 3 días en el Tuxpan para lograrlo."
-  },
-
-  {
-    dia: "DÍA 7",
-    fecha: "X07.01.2026",
-    plan: "🇨🇺 Día cubano en el Tuxpan.\nActividades del hotel.\nPaseo por el pueblo.\nVisita a la zona nueva de Varadero.",
-    donde: "Hotel Tuxpan, Varadero",
-    gasto: 40,
-    reto: "Conseguir colarnos en la 420 y hacer foto que lo certifique.\nBailar la conga."
-  },
-
-  {
-    dia: "DÍA 8",
-    fecha: "J08.01.2026",
-    plan: "Vuelta a La Habana.\nParada en casa de Rudbeckia.\nTarde y noche en familia en Párraga.",
-    donde: "Villa ZERO STRESS, Párraga (La Habana)",
-    gasto: 30,
-    reto: "Hablar con un cubano y aprender una palabra nueva que compartiremos con el resto en alguna frase para sorprender a todos."
-  },
-
-  {
-    dia: "DÍA 9",
-    fecha: "V09.01.2026",
-    plan: "Lanchita de Regla.\nVisita a la Iglesia de Regla.\nPaseo por el puerto.\nCompras en los Almacenes de San José.\nCafé cantante por la noche.",
-    donde: "Villa ZERO STRESS, Párraga (La Habana)",
-    gasto: 30,
-    reto: "Comprar algo en los Almacenes San José regateando sin pasarnos 😅 y usando correctamente la expresión "estás de madre""
-  },
-
-  {
-    dia: "DÍA 10",
-    fecha: "S10.01.2026",
-    plan: "Día abierto.\nPosible pasadía en el Blau.\nOtras actividades en familia.\nVisita a la sobrina y primo de Paco.\nVisita a Tere.\nCañonazo de las 21h.",
-    donde: "Villa ZERO STRESS, Párraga (La Habana)",
-    gasto: 40,
-    reto: "Conseguir pagar en pesos el Cañonazo como si fuéramos cubanos"
-  },
-
-  {
-    dia: "DÍA 11",
-    fecha: "D11.01.2026",
-    plan: "Fiesta de despedida familiar.\nÚltimos paseos por La Habana.\nÚltimas fotos.\nPreparación de maletas.",
-    donde: "Avión (noche de vuelta)",
-    gasto: 30,
-    reto: "Conseguir una foto grupal donde todos salgamos bien 🤳"
-  },
-
-  {
-    dia: "DÍA 12",
-    fecha: "L12.01.2026",
-    plan: "🛬 Aterrizaje en Madrid.\nFin del viaje ZERO STRESS Cuba 2026.",
-    donde: "Casa",
-    gasto: 0,
-    reto: "No llorar más de 3 veces antes de aterrizar😭"
+  function renderDayChips() {
+    if (!dayStrip) return;
+    dayStrip.innerHTML = "";
+    days.forEach((day, index) => {
+      const chip = document.createElement("button");
+      chip.className = "day-chip" + (index === 0 ? " active" : "");
+      chip.dataset.index = index;
+      chip.innerHTML = `
+        ${day.dia}
+        <span>${day.fecha}</span>
+      `;
+      chip.addEventListener("click", () => selectDay(index));
+      dayStrip.appendChild(chip);
+    });
   }
-];
 
-
-    const dayStrip = document.getElementById("dayStrip");
-    const dayCard = document.getElementById("dayCard");
-    const tabs = document.querySelectorAll(".tab");
-    const sections = document.querySelectorAll(".section");
-    const notesArea = document.getElementById("notesArea");
-    const NOTES_KEY = "zerostress_cuba_2026_notas";
-
-    function renderDayChips() {
-      dayStrip.innerHTML = "";
-      days.forEach((day, index) => {
-        const chip = document.createElement("button");
-        chip.className = "day-chip" + (index === 0 ? " active" : "");
-        chip.dataset.index = index;
-        chip.innerHTML = `
-          ${day.dia}
-          <span>${day.fecha}</span>
-        `;
-        chip.addEventListener("click", () => selectDay(index));
-        dayStrip.appendChild(chip);
-      });
-    }
-
-    function formatCurrency(value) {
-      if (!value || isNaN(value)) return "0 €";
-      return new Intl.NumberFormat("es-ES", {
-        style: "currency",
-        currency: "EUR",
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 0
-      }).format(value);
-    }
+  function formatCurrency(value) {
+    if (!value || isNaN(value)) return "0 €";
+    return new Intl.NumberFormat("es-ES", {
+      style: "currency",
+      currency: "EUR",
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0
+    }).format(value);
+  }
 
   function selectDay(index) {
-  const day = days[index];
+    const day = days[index];
+    if (!dayCard) return;
 
-  // Marcar chip activo
-  document.querySelectorAll(".day-chip").forEach(chip => {
-    chip.classList.toggle("active", Number(chip.dataset.index) === index);
-  });
+    document.querySelectorAll(".day-chip").forEach(chip => {
+      chip.classList.toggle("active", Number(chip.dataset.index) === index);
+    });
 
-  // Pintar tarjeta del día
-  dayCard.innerHTML = `
-    <div class="card-header">
-      <div class="card-title">${day.dia} · ${day.fecha}</div>
-      <div class="card-date">Día ${index + 1} de ${days.length}</div>
-    </div>
-
-    <div class="card-plan" style="white-space:pre-line;">
-      ${day.plan}
-    </div>
-
-    <div class="card-meta">
-      <div class="meta-pill">
-        <span class="meta-label">Dormimos en</span>
-        <span class="meta-value">${day.donde}</span>
+    dayCard.innerHTML = `
+      <div class="card-header">
+        <div class="card-title">${day.dia} · ${day.fecha}</div>
+        <div class="card-date">Día ${index + 1} de ${days.length}</div>
       </div>
 
-      <div class="meta-pill">
-        <span class="meta-label">Presupuesto</span>
-        <span class="meta-value">${formatCurrency(day.gasto)}</span>
+      <div class="card-plan" style="white-space:pre-line;">
+        ${day.plan}
       </div>
 
+      <div class="card-meta">
         <div class="meta-pill">
-         <span class="meta-label">Reto del día</span>
-          <span class="meta-value" style="white-space:pre-line;">
-        ${day.reto || "—"}
-          </span>
+          <span class="meta-label">Dormimos en</span>
+          <span class="meta-value">${day.donde}</span>
         </div>
 
-    </div>
-  `;
-}
+        <div class="meta-pill">
+          <span class="meta-label">Presupuesto</span>
+          <span class="meta-value">${formatCurrency(day.gasto)}</span>
+        </div>
 
+        <div class="meta-pill">
+          <span class="meta-label">Reto del día</span>
+          <span class="meta-value" style="white-space:pre-line;">
+            ${day.reto || "—"}
+          </span>
+        </div>
+      </div>
+    `;
+  }
 
-    function setupTabs() {
-      tabs.forEach(tab => {
-        tab.addEventListener("click", () => {
-          const target = tab.dataset.tab;
-          tabs.forEach(t => t.classList.toggle("active", t === tab));
-          sections.forEach(sec =>
-            sec.classList.toggle("active", sec.id === target)
-          );
-        });
+  function setupTabs() {
+    if (!tabs.length) return;
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        const target = tab.dataset.tab;
+        tabs.forEach(t => t.classList.toggle("active", t === tab));
+        sections.forEach(sec =>
+          sec.classList.toggle("active", sec.id === target)
+        );
       });
+    });
+  }
+
+  function setupNotes() {
+    if (!notesArea) return;
+
+    try {
+      const saved = localStorage.getItem(NOTES_KEY);
+      if (saved) {
+        notesArea.value = saved;
+      }
+    } catch (e) {
+      console.warn("No se pudieron cargar las notas guardadas", e);
     }
 
-    function setupNotes() {
-      try {
-        const saved = localStorage.getItem(NOTES_KEY);
-        if (saved) {
-          notesArea.value = saved;
+    let saveTimeout = null;
+    notesArea.addEventListener("input", () => {
+      clearTimeout(saveTimeout);
+      saveTimeout = setTimeout(() => {
+        try {
+          localStorage.setItem(NOTES_KEY, notesArea.value);
+        } catch (e) {
+          console.warn("No se pudieron guardar las notas", e);
         }
-      } catch (e) {
-        console.warn("No se pudieron cargar las notas guardadas", e);
-      }
+      }, 400);
+    });
+  }
 
-      let saveTimeout = null;
-      notesArea.addEventListener("input", () => {
-        clearTimeout(saveTimeout);
-        saveTimeout = setTimeout(() => {
-          try {
-            localStorage.setItem(NOTES_KEY, notesArea.value);
-          } catch (e) {
-            console.warn("No se pudieron guardar las notas", e);
-          }
-        }, 400);
-      });
+  function registerServiceWorker() {
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker
+        .register("./sw.js")
+        .catch(err => console.warn("SW error", err));
     }
+  }
 
-    function registerServiceWorker() {
-      if ("serviceWorker" in navigator) {
-        navigator.serviceWorker
-          .register("./sw.js")
-          .catch(err => console.warn("SW error", err));
-      }
-    }
+  // Init
+  renderDayChips();
+  selectDay(0);
+  setupTabs();
+  setupNotes();
+  registerServiceWorker();
+});
+</script>
 
-    // Init
-    renderDayChips();
-    selectDay(0);
-    setupTabs();
-    setupNotes();
-    registerServiceWorker();
-  </script>
 </body>
 </html>
+
 
 
 
