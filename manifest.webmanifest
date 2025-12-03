@@ -1,7 +1,7 @@
 {
   "name": "ZeroStress · Cuba 2026",
   "short_name": "ZeroStress",
-  "start_url": "/zerostress-cuba-app/",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#f5efe6",
   "theme_color": "#1cafa8",
@@ -18,6 +18,7 @@
     }
   ]
 }
+
 
 
 
