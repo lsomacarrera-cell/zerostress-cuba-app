@@ -771,13 +771,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-        <div class="meta-pill">
-          <span class="meta-label">Reto del día</span>
-          <span class="meta-value" style="white-space:pre-line;">
-            ${day.reto || "—"}
-          </span>
-        </div>
-      </div>
+    <div class="meta-pill" 
+     style="background:#1cafa8; color:#fff; border:none;">
+  <span class="meta-label" style="color:#fff; font-weight:600;">
+    Reto del día
+  </span>
+  <span class="meta-value" style="white-space:pre-line; color:#fff;">
+    ${day.reto || "—"}
+  </span>
+</div>
+
     `;
   }
 
@@ -838,6 +841,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
+
 
 
 
