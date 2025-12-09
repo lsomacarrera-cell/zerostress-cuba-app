@@ -743,12 +743,13 @@ document.addEventListener("DOMContentLoaded", () => {
   <span class="meta-value">${formatCurrency(day.gasto)}</span>
   <!-- Y si hay texto, lo mostramos debajo -->
   ${
-    day.gasto_detalle
-      ? `<span class="meta-value" style="white-space: pre-line; font-weight:400; margin-top:4px;">
-           ${day.gasto_detalle}
-         </span>`
-      : ""
-  }
+  day.gasto_detalle
+    ? `<span class="meta-value" style="white-space: pre-line; font-weight:400;">
+         ${day.gasto_detalle}
+       </span>`
+    : ""
+}
+
 </div>
 
 
@@ -819,6 +820,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
+
 
 
 
