@@ -748,16 +748,22 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
 
  <div class="meta-pill" 
-     style="flex-direction: column; align-items: flex-start; padding: 4px 8px;">
+     style="flex-direction: column; align-items: flex-start; padding: 4px 8px; line-height: 1.1;">
 
-  <span class="meta-label" style="font-weight:600;">Presupuesto</span>
+  <!-- Línea 1: Presupuesto + importe -->
+  <div style="display:flex; gap:6px; align-items:center; line-height:1;">
+    <span class="meta-label" style="font-weight:600;">Presupuesto</span>
+    <span class="meta-value" style="font-weight:600;">${formatCurrency(day.gasto)}</span>
+  </div>
 
-  <span class="meta-value" style="white-space:pre-line; line-height:1.1;">
-    ${day.gasto_detalle 
-        ? `${formatCurrency(day.gasto)}\n${day.gasto_detalle}` 
-        : formatCurrency(day.gasto)
-    }
-  </span>
+  <!-- Línea 2: detalle pegado justo debajo -->
+  ${
+    day.gasto_detalle
+      ? `<div style="white-space:pre-line; font-weight:400; margin-top:0; line-height:1.1;">
+           ${day.gasto_detalle}
+         </div>`
+      : ""
+  }
 
 </div>
 
@@ -832,6 +838,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
+
 
 
 
