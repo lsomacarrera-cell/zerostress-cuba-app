@@ -851,35 +851,43 @@ document.addEventListener("DOMContentLoaded", () => {
   registerServiceWorker();
 });
 </script>
-  <audio id="musica" src="./FrankyLau.mpeg" loop></audio>
+<audio id="musica" src="./FrankyLau.mpeg" loop></audio>
+
 <script>
+// Autoplay legal: primer click en cualquier parte de la pantalla
 document.addEventListener("click", () => {
   const audio = document.getElementById("musica");
-  if (audio && audio.paused) {
-    audio.play().catch(()=>{});
-  }
-}, { once: true });
-</script>
-
-
-function toggleMusica() {
-  const audio = document.getElementById("musica");
   const btn   = document.getElementById("toggleMusicaBtn");
-
   if (!audio) return;
 
   if (audio.paused) {
     audio.play().catch(()=>{});
-    btn.textContent = "🔇";
+    btn.textContent = "🎵";   // Música sonando
+  }
+}, { once: true });
+
+// Botón parar/reanudar
+function toggleMusica() {
+  const audio = document.getElementById("musica");
+  const btn   = document.getElementById("toggleMusicaBtn");
+  if (!audio) return;
+
+  if (audio.paused) {
+    audio.play().catch(()=>{});
+    btn.textContent = "🔇";  // música sonando → icono mute disponible
   } else {
     audio.pause();
-    btn.textContent = "🎵";
+    btn.textContent = "🎵";  // música parada → icono nota disponible
   }
 }
+
+</script>
+
 </script>
 
 </body>
 </html>
+
 
 
 
