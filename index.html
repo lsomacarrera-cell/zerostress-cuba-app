@@ -837,13 +837,26 @@ document.addEventListener("DOMContentLoaded", () => {
   setupNotes();
   registerServiceWorker();
 });
-  </script>
+
+// ===============================
+// ARRANQUE DE LA MÚSICA AL PRIMER TOQUE
+// ===============================
+document.addEventListener("click", () => {
+  const audio = document.getElementById("musica");
+  if (audio) {
+    audio.play().catch(() => {});
+  }
+}, { once: true });
+
+</script>
+
 
   <!-- Aquí mismo VA la música -->
   <audio id="musica" src="./FrankyLau.mpeg" autoplay loop></audio>
 
 </body>
 </html>
+
 
 
 
