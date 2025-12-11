@@ -853,6 +853,15 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
   <audio id="musica" src="./FrankyLau.mpeg" loop></audio>
 <script>
+document.addEventListener("click", () => {
+  const audio = document.getElementById("musica");
+  if (audio && audio.paused) {
+    audio.play().catch(()=>{});
+  }
+}, { once: true });
+</script>
+
+
 function toggleMusica() {
   const audio = document.getElementById("musica");
   const btn   = document.getElementById("toggleMusicaBtn");
@@ -871,6 +880,7 @@ function toggleMusica() {
 
 </body>
 </html>
+
 
 
 
