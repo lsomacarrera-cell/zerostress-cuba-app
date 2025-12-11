@@ -359,12 +359,25 @@
       <div class="header-text">
      <h1>ZERO STRESS · Cuba <span class="flag">🇨🇺</span></h1>
         <p>Viaje del 1 al 12 de enero · La Habana · Viñales · Varadero</p>
-        <div class="badge">
-          <div class="badge-dot"></div>
-          <span>Funciono sin internet😉</span>
-        </div>
-      </div>
+</div>
     </header>
+<div class="badge"
+     style="display:flex; justify-content:space-between; align-items:center; width:100%; padding:4px 10px; margin-bottom:12px;">
+
+  <!-- Parte izquierda -->
+  <div style="display:flex; align-items:center; gap:6px;">
+    <div class="badge-dot"></div>
+    <span>Funciono sin internet😉</span>
+  </div>
+
+  <!-- Parte derecha -->
+  <button id="toggleMusicaBtn"
+          onclick="toggleMusica()"
+          style="padding:4px 8px; border-radius:999px; border:none; background:#1cafa8; color:white; font-size:12px; cursor:pointer;">
+    🔇
+  </button>
+
+</div>
 
     <div class="tabs">
       <button class="tab active" data-tab="preparativos">Preparativos</button>
@@ -838,9 +851,27 @@ document.addEventListener("DOMContentLoaded", () => {
   registerServiceWorker();
 });
 </script>
+  <audio id="musica" src="./FrankyLau.mpeg" loop></audio>
+<script>
+function toggleMusica() {
+  const audio = document.getElementById("musica");
+  const btn   = document.getElementById("toggleMusicaBtn");
+
+  if (!audio) return;
+
+  if (audio.paused) {
+    audio.play().catch(()=>{});
+    btn.textContent = "🔇";
+  } else {
+    audio.pause();
+    btn.textContent = "🎵";
+  }
+}
+</script>
 
 </body>
 </html>
+
 
 
 
