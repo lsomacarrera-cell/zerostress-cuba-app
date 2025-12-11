@@ -371,11 +371,12 @@
   </div>
 
   <!-- Parte derecha -->
-  <button id="toggleMusicaBtn"
-          onclick="toggleMusica()"
-          style="padding:4px 8px; border-radius:999px; border:none; background:#1cafa8; color:white; font-size:12px; cursor:pointer;">
-    🔇
-  </button>
+ <button id="toggleMusicaBtn"
+        onclick="toggleMusica()"
+        style="padding:4px 8px; border-radius:999px; border:none; background:#1cafa8; color:white; font-size:12px; cursor:pointer;">
+  🎵
+</button>
+
 
 </div>
 
@@ -876,18 +877,24 @@ function toggleMusica() {
 
   if (!audio) return;
 
+  // Si la música está en pausa → la encendemos
   if (audio.paused) {
     audio.play().catch(()=>{});
-    btn.textContent = "🔇"; 
-  } else {
+    btn.textContent = "🔇";  // Música sonando → icono para silenciar
+  } 
+  
+  // Si la música está sonando → la paramos
+  else {
     audio.pause();
-    btn.textContent = "🎵";
+    btn.textContent = "🎵";  // Música parada → icono para activar
   }
 }
+
 </script>
 
 </body>
 </html>
+
 
 
 
