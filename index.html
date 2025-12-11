@@ -372,6 +372,13 @@
       <button class="tab" data-tab="itinerario">Itinerario</button>
       <button class="tab" data-tab="notas">Mis notas</button>
      </div>
+    <button
+  id="toggleMusicaBtn"
+  onclick="toggleMusica()"
+  style="margin:10px 0; padding:6px 12px; border-radius:999px; border:none; background:#1cafa8; color:white; font-size:12px; cursor:pointer;">
+  Pausar música 🔇
+</button>
+
 
     <!-- Sección PREPARATIVOS -->
     <section id="preparativos" class="section active">
@@ -847,6 +854,20 @@ document.addEventListener("click", () => {
     audio.play().catch(() => {});
   }
 }, { once: true });
+// Botón para pausar / reanudar la música
+function toggleMusica() {
+  const audio = document.getElementById("musica");
+  const btn = document.getElementById("toggleMusicaBtn");
+  if (!audio) return;
+
+  if (audio.paused) {
+    audio.play().catch(() => {});
+    btn.textContent = "Pausar música 🔇";
+  } else {
+    audio.pause();
+    btn.textContent = "Reanudar música 🎵";
+  }
+}
 
 </script>
 
@@ -856,6 +877,7 @@ document.addEventListener("click", () => {
 
 </body>
 </html>
+
 
 
 
