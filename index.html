@@ -359,19 +359,24 @@
       <div class="header-text">
      <h1>ZERO STRESS · Cuba <span class="flag">🇨🇺</span></h1>
         <p>Viaje del 1 al 12 de enero · La Habana · Viñales · Varadero</p>
-        <div class="badge">
-          <div class="badge-dot"></div>
-          <span>Funciono sin internet😉</span>
-        </div>
-      </div>
-    </header>
+<div class="badge" style="display:flex; justify-content:space-between; align-items:center; width:100%; padding-right:4px;">
 
-    <div class="tabs">
-      <button class="tab active" data-tab="preparativos">Preparativos</button>
-      <button class="tab" data-tab="diccionario">Diccionario y Tips</button>
-      <button class="tab" data-tab="itinerario">Itinerario</button>
-      <button class="tab" data-tab="notas">Mis notas</button>
-     </div>
+  <!-- PARTE IZQUIERDA: punto verde + texto -->
+  <div style="display:flex; align-items:center; gap:6px;">
+    <div class="badge-dot"></div>
+    <span>Funciono sin internet😉</span>
+  </div>
+
+  <!-- PARTE DERECHA: botón de música -->
+  <button
+    id="toggleMusicaBtn"
+    onclick="toggleMusica()"
+    style="padding:4px 8px; border-radius:999px; border:none; background:#1cafa8; color:white; font-size:11px; cursor:pointer;">
+    🔇
+  </button>
+
+</div>
+
     <button
   id="toggleMusicaBtn"
   onclick="toggleMusica()"
@@ -877,6 +882,7 @@ function toggleMusica() {
 
 </body>
 </html>
+
 
 
 
