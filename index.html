@@ -356,33 +356,22 @@
     <header>
       <img src="./logo-zerostress.png" alt="ZeroStress Logo" 
       style="width:58px; height:58px; border-radius:50%; object-fit:cover; box-shadow:0 4px 12px rgba(0,0,0,0.25);">
-      
       <div class="header-text">
      <h1>ZERO STRESS · Cuba <span class="flag">🇨🇺</span></h1>
-   <p>Viaje del 1 al 12 de enero · La Habana · Viñales · Varadero</p>
-</div>   <!-- CIERRE DE .header-text -->
-</header>
-<!-- badge + botón (fuera de header-text, pero dentro de header) -->
-<!-- badge + botón (fuera de header-text, pero dentro de header) -->
-<div class="badge" 
-     style="display:flex; justify-content:space-between; align-items:center; width:100%; padding-right:4px;">
-  
-  <!-- PARTE IZQUIERDA -->
-  <div style="display:flex; align-items:center; gap:6px;">
-    <div class="badge-dot"></div>
-    <span>Funciono sin internet😉</span>
-  </div>
+        <p>Viaje del 1 al 12 de enero · La Habana · Viñales · Varadero</p>
+        <div class="badge">
+          <div class="badge-dot"></div>
+          <span>Funciono sin internet</span>
+        </div>
+      </div>
+    </header>
 
-  <!-- PARTE DERECHA -->
-  <button
-    id="toggleMusicaBtn"
-    onclick="toggleMusica()"
-    style="padding:4px 8px; border-radius:999px; border:none; background:#1cafa8; color:white; font-size:11px; cursor:pointer;">
-    🔇
-  </button>
-
-</div>
-
+    <div class="tabs">
+      <button class="tab active" data-tab="preparativos">Preparativos</button>
+      <button class="tab" data-tab="diccionario">Diccionario y Tips</button>
+      <button class="tab" data-tab="itinerario">Itinerario</button>
+      <button class="tab" data-tab="notas">Mis notas</button>
+     </div>
 
     <!-- Sección PREPARATIVOS -->
     <section id="preparativos" class="section active">
@@ -848,39 +837,11 @@ document.addEventListener("DOMContentLoaded", () => {
   setupNotes();
   registerServiceWorker();
 });
-
-// ===============================
-// ARRANQUE DE LA MÚSICA AL PRIMER TOQUE
-// ===============================
-document.addEventListener("click", () => {
-  const audio = document.getElementById("musica");
-  if (audio) {
-    audio.play().catch(() => {});
-  }
-}, { once: true });
-// Botón para pausar / reanudar la música
-function toggleMusica() {
-  const audio = document.getElementById("musica");
-  const btn = document.getElementById("toggleMusicaBtn");
-  if (!audio) return;
-
-  if (audio.paused) {
-    audio.play().catch(() => {});
-    btn.textContent = "Pausar música 🔇";
-  } else {
-    audio.pause();
-    btn.textContent = "Reanudar música 🎵";
-  }
-}
-
 </script>
-
-
-  <!-- Aquí mismo VA la música -->
-  <audio id="musica" src="./FrankyLau.mpeg" autoplay loop></audio>
 
 </body>
 </html>
+
 
 
 
